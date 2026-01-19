@@ -5,6 +5,7 @@ import tenisBrancoEPreto from "@/assets/images/galeria-tenis-branco-e-preto.jpg"
 import tenisColorido from "@/assets/images/galeria-tenis-colorido.jpg";
 import modelo from "@/assets/images/galeria-modelo.jpg";
 import { Button } from "../Button";
+import { Overlay } from "../Overlay";
 
 export const Gallery = () => {
     return (
@@ -13,15 +14,11 @@ export const Gallery = () => {
                 <img className="w-full h-full object-cover rounded-[20px]"
                     src={galeriaHomem} alt="Banner" />
 
-                <div className="absolute text-white">
-                    <div className="flex flex-col items-center">
-                        <h2 className='text-xl font-medium leading-normal tracking-wider mb-2'>Krypton One</h2>
-                        <h1 className='text-2xl leading-9 tracking-widest mb-5'>Estilo Urbano com atitude</h1>
-                        <div className="flex gap-2.5">
-                            <Button variant="secondary"> Feminino</Button><Button variant="secondary"> Masculino</Button>
-                        </div>
-                    </div>
-                </div>
+                <Overlay title="Krypton One" subtitle="Estilo Urbano com atitude"
+                className="inset-0 justify-center">
+                    <Button variant="secondary"> Feminino</Button>
+                    <Button variant="secondary"> Masculino</Button>
+                </Overlay>
             </div>
 
             <div className="col-span-12 row-span-1 md:col-span-6 order-6 md:order-2">

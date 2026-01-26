@@ -16,21 +16,18 @@ function RouteComponent() {
           <Logo />
 
           <h2 className='font-bold text-[21px] mb-2'>Entrar</h2>
-
-          <p>Escolha como você gostaria de fazer login</p>
-
-          <button className='w-full flex items-center justify-center gap-2 border border-gray-300 rounded-md py-3 hover:bg-gray-50 transition cursor-pointer'>
-          <img src={GoogleIcon} alt="Google Icon" 
-          className="w-5 h-5"/>
-          <span className='text-sm font-medium'>Continuar com Google</span>
-        </button>
-
-        <Separator />
-
           <LoginForm />
 
-          <p className='mt-3.5'>Ainda não possui conta? 
-            <Link to="/sign-up" className='ml-1 text-[#5433EB] hover:underline '>Cadastre-se</Link>
+          <Separator />
+
+          <button className='w-full flex items-center justify-center gap-2 border border-gray-300 rounded-md py-3 hover:bg-gray-50 transition cursor-pointer'>
+            <img src={GoogleIcon} alt="Google Icon"
+              className="w-5 h-5" />
+            <span className='text-sm font-medium'>Continuar com Google</span>
+          </button>
+
+          <p className='mt-3.5'>Ainda não possui conta?
+            <Link to="/sign-up" className='ml-1 text-[#5433EB] hover:underline '>Registre-se</Link>
           </p>
         </div>
       </div>

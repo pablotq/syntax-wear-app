@@ -23,7 +23,7 @@ function RouteComponent() {
         </button>
 
         <p className="text-sm text-gray-600 mt-6 text-center">Já tem uma conta?
-          <Link to="/sign-in" className='text-[#5433EB] hover:underline ml-1'>Entrar</Link>
+          <Link to="/sign-in" className='text-[#5433EB] hover:underline ml-1'>Login</Link>
         </p>
       </div>
     </section>

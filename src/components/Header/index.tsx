@@ -1,9 +1,20 @@
 import Logo from '@/assets/images/logo.png';
 import IconUser from '@/assets/images/icon-user.png';
 import IconAbout from '@/assets/images/icon-about.png';
-// import IconsCart from '@/assets/images/icon-cart.png';
 import { Link } from '@tanstack/react-router';
 import { ShoppingCart } from '../ShoppingCart';
+import { MenuMobile } from '../MenuMobile';
+
+export interface NavLink{
+  name: string;
+  href: string;
+}
+
+const navLinks: NavLink[] = [
+  {name: "Masculino", href: "/products"},
+  {name: "Feminino", href: "/products"},
+  {name: "Outlet", href: "/products"},
+]
 
 export const Header = () => {
   return (
@@ -17,23 +28,29 @@ export const Header = () => {
 
 
           <nav className='hidden md:block'>
-            <ul className='flex gap-4 lg:gap-10'>
-              <li><Link to="/products">Masculino</Link></li>
-              <li><Link to="/products">Feminino</Link></li>
-              <li><Link to="/products">Outlet</Link></li>
+            <ul className='flex gap-3 lg:gap-10'>
+              {navLinks.map((link) => (
+                <li><Link to={link.href}>{link.name}</Link></li>
+              ))}
             </ul>
           </nav>
 
           <nav>
-            <ul className='flex gap-4 lg:gap-10'>
+            <ul className='flex gap-3 lg:gap-10 items-center'>
               <li className='hidden md:block'>
                 <Link to="/our-stores">Nossas lojas</Link>
-               </li>
+              </li>
               <li className='hidden md:block'>
                 <Link to="/about">Sobre</Link>
               </li>
-              <li><Link to="/sign-in"><img src={IconUser} alt="Ícone de login" /></Link></li>
-              <li><a href="#"><img src={IconAbout} alt="Ícone sobre" /></a></li>
+              <li className='md:hidden'>
+                <MenuMobile navLinks={navLinks} />
+              </li>
+              <li className='hidden md:block'>
+                <Link to="/sign-in"><img src={IconUser} alt="Ícone de login" /></Link>
+              </li>
+              <li className='hidden md:block'>
+                <Link to="/about"><img src={IconAbout} alt="Ícone sobre" /></Link></li>
               <li>
                 <ShoppingCart />
               </li>

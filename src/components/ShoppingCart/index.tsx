@@ -10,13 +10,15 @@ export const ShoppingCart = () => {
     const [cartIsOpen, setCartIsOpen] = useState<boolean>(false);
     const { cart, removeFromCart, decrementInCart, incrementInCart } = useContext(CartContext);
 
-    console.log(cart);
-
-
     return (
         <>
-            <button className="cursor-pointer" onClick={() => setCartIsOpen(!cartIsOpen)}>
+            <button className="relative cursor-pointer" onClick={() => setCartIsOpen(!cartIsOpen)}>
                 <img src={IconCart} alt="Ícone carrinho de compras" />
+                {cart.length > 0 && (
+                    <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
+                        {cart.length}
+                    </span>
+                )}
             </button>
 
             <div className={`${cartIsOpen ? 'bg-black/70 visible' : 'bg-transparent invisible'} fixed top-0 bottom-0 left-0 right-0`} onClick={() => setCartIsOpen(!cartIsOpen)}>

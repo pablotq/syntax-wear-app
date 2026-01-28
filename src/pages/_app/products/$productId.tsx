@@ -1,31 +1,36 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { products } from '../../../mocks/products'
 import { formatCurrency } from '../../../utils/format-currency'
+import { useContext } from 'react'
+import { CartContext } from '../../../contexts/CartContext'
 
 export const Route = createFileRoute('/_app/products/$productId')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
+  const { addToCart } = useContext(CartContext);
 
   const { productId } = Route.useParams()
 
   const filteredProduct = products.find(product => product.id === Number(productId))
 
+  if(!filteredProduct) return;
+
   const originalPrice = filteredProduct?.price ?? 0;
   const discountPrice = originalPrice * 0.9;
-
   const inInstallmentsPrice = originalPrice / 6;
 
+
   return (
-    <section className='container mb-10 pt-40 md:pt-50 pb-10 px-10 md:px-10'>
+    <section className='container mb-10 pt-40 md:pt-50 pb-10 px-2 sm:px-4  md:px-10'>
       <nav className='text-black text-sm mb-15 ml-5'>
         <Link className='hover:underline' to="/">Home</Link> /
         <Link className='hover:underline' to="/products"> Produto</Link> /
         <Link className='hover:underline font-semibold' to="/"> {filteredProduct?.name}</Link>
       </nav>
 
-      <div className="flex flex-col md:flex-row justify-center gap-10">
+      <div className="flex flex-col lg:flex-row justify-center gap-10">
         <img src={filteredProduct?.image} alt={filteredProduct?.name}
           className='max-w-125 bg-white rounded-2xl' />
 
@@ -64,7 +69,7 @@ function RouteComponent() {
             </form>
           </div>
 
-          <button className='bg-black text-white p-5 rounded-md w-full cursor-pointer hover:bg-gray-800'>Adicionar ao carrinho</button>
+          <button className='bg-black text-white p-5 rounded-md w-full cursor-pointer hover:bg-gray-800' onClick={() => addToCart(filteredProduct)}>Adicionar ao carrinho</button>
 
         </div>
       </div>

@@ -16,7 +16,14 @@ function RouteComponent() {
 
   const filteredProduct = products.find(product => product.id === Number(productId))
 
-  if(!filteredProduct) return;
+  if (!filteredProduct) {
+    return (
+      <section className='container text-black mb-10 pt-40 md:pt-50 pb-10 px-2 sm:px-4  md:px-10 min-h-[80vh] flex flex-col items-center justify-center'>
+        <h1 className=' text-3xl font-semibold mb-4'>Porduto não encontrado</h1>
+        <p className='mb-6'>O produto que você está procurando não existe ou foi removido</p>
+        <Link to="/products" className='text-accent hover:text-accent-hover hover:underline'>Voltar para produtos</Link>
+      </section>);
+  }
 
   const originalPrice = filteredProduct?.price ?? 0;
   const discountPrice = originalPrice * 0.9;
@@ -24,7 +31,9 @@ function RouteComponent() {
 
 
   return (
+
     <section className='container mb-10 pt-40 md:pt-50 pb-10 px-2 sm:px-4  md:px-10'>
+
       <nav className='text-black text-sm mb-15 ml-5'>
         <Link className='hover:underline' to="/">Home</Link> /
         <Link className='hover:underline' to="/products"> Produto</Link> /
@@ -52,7 +61,7 @@ function RouteComponent() {
           <p className='mb-2'>
             ou
             <span className='text-[#38373A] font-semibold'> 6x </span>
-            de 
+            de
             <span className='text-[#38373A] font-semibold'> {formatCurrency(inInstallmentsPrice)}</span>
           </p>
 
@@ -70,6 +79,7 @@ function RouteComponent() {
 
         </div>
       </div>
+
 
 
 

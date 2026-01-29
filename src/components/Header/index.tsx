@@ -5,15 +5,15 @@ import { Link } from '@tanstack/react-router';
 import { ShoppingCart } from '../ShoppingCart';
 import { MenuMobile } from '../MenuMobile';
 
-export interface NavLink{
+export interface NavLink {
   name: string;
   href: string;
 }
 
 const navLinks: NavLink[] = [
-  {name: "Masculino", href: "/products"},
-  {name: "Feminino", href: "/products"},
-  {name: "Outlet", href: "/products"},
+  { name: "Masculino", href: "/products/category/masculino" },
+  { name: "Feminino", href: "/products/category/feminino" },
+  { name: "Outlet", href: "/products/category/outlet" },
 ]
 
 export const Header = () => {
@@ -30,7 +30,12 @@ export const Header = () => {
           <nav className='hidden md:block'>
             <ul className='flex gap-3 lg:gap-10'>
               {navLinks.map((link) => (
-                <li key={link.name}><Link to={link.href}>{link.name}</Link></li>
+                <li key={link.name}>
+                  <Link to="/products/category/$category"
+                    params={{ category: link.name.toLowerCase() }}>
+                    {link.name}
+                  </Link>
+                </li>
               ))}
             </ul>
           </nav>

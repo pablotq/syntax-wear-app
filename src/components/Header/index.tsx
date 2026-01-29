@@ -30,7 +30,7 @@ export const Header = () => {
           <nav className='hidden md:block'>
             <ul className='flex gap-3 lg:gap-10'>
               {navLinks.map((link) => (
-                <li><Link to={link.href}>{link.name}</Link></li>
+                <li key={link.name}><Link to={link.href}>{link.name}</Link></li>
               ))}
             </ul>
           </nav>

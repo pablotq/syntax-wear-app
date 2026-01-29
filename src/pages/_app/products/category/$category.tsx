@@ -4,6 +4,11 @@ import { products } from '../../../../mocks/products';
 
 export const Route = createFileRoute('/_app/products/category/$category')({
     component: RouteComponent,
+  head: ({params}) => ({
+    meta: [
+      { title: `Produtos - ${params.category.charAt(0).toUpperCase() + params.category.slice(1)} - SyntaxWear`}
+    ]
+  }),
 })
 
 function RouteComponent() {

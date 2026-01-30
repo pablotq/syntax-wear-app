@@ -49,7 +49,7 @@ export const CEPForm = () => {
                 <input
                     type="text"
                     placeholder='Insira seu CEP'
-                    className='border border-[#C0C0C0] rounded-md p-3 flex-1'
+                    className='border border-border rounded-md p-3 flex-1'
                     {...register('cep')}
                 />
                 <button type='submit' 
@@ -60,11 +60,11 @@ export const CEPForm = () => {
             </div>
 
             {errors.cep && (
-                <span className='text-red-500 text-sm'>{errors.cep.message}</span>
+                <span className='text-error text-sm'>{errors.cep.message}</span>
             )}
 
             {addrdessError && (
-                <span className='text-red-500 text-sm'>{addrdessError}</span>
+                <span className='text-error text-sm'>{addrdessError}</span>
             )}
 
             {addrdess && (

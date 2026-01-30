@@ -8,79 +8,79 @@ export const RegisterForm = () => {
         <form className="text-black">
 
             <div>
-                <label className="text-xs text-gray-600">E-mail*</label>
+                <label className="text-xs text-gray-text">E-mail*</label>
                 <input className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                ${errors.email ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433EB]"}`}
+                ${errors.email ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
                 type="email" {...register("email")} />
 
-                {errors.email && <p className="text-xs text-red-600 mt-1">{errors.email.message}</p>}
+                {errors.email && <p className="text-xs text-error mt-1">{errors.email.message}</p>}
             </div>
 
             <div>
-                <label className="text-xs text-gray-600">Senha*</label>
+                <label className="text-xs text-gray-text">Senha*</label>
                 <input className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                ${errors.password ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433EB]"}`}
+                ${errors.password ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
                 type="password" {...register("password")} />
 
-                {errors.password && <p className="text-xs text-red-600 mt-1">{errors.password.message}</p>}
+                {errors.password && <p className="text-xs text-error mt-1">{errors.password.message}</p>}
             </div>
 
             <div>
-                <label className="text-xs text-gray-600">Confirmar Senha*</label>
+                <label className="text-xs text-gray-text">Confirmar Senha*</label>
                 <input className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                ${errors.confirmPassword ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433EB]"}`}
+                ${errors.confirmPassword ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
                 type="password" {...register("confirmPassword")} />
 
-                {errors.confirmPassword && <p className="text-xs text-red-600 mt-1">{errors.confirmPassword.message}</p>}
+                {errors.confirmPassword && <p className="text-xs text-error mt-1">{errors.confirmPassword.message}</p>}
             </div>
 
             <div>
-                <label className="text-xs text-gray-600">Nome*</label>
+                <label className="text-xs text-gray-text">Nome*</label>
                 <input className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                ${errors.firstName ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433EB]"}`}
+                ${errors.firstName ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
                 type="text" {...register("firstName")} />
 
-                {errors.firstName && <p className="text-xs text-red-600 mt-1">{errors.firstName.message}</p>}
+                {errors.firstName && <p className="text-xs text-error mt-1">{errors.firstName.message}</p>}
             </div>
 
             <div>
-                <label className="text-xs text-gray-600">Sobrenome*</label>
+                <label className="text-xs text-gray-text">Sobrenome*</label>
                 <input className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                ${errors.lastName ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433EB]"}`}
+                ${errors.lastName ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
                 type="text" {...register("lastName")} />
 
-                {errors.lastName && <p className="text-xs text-red-600 mt-1">{errors.lastName.message}</p>}
+                {errors.lastName && <p className="text-xs text-error mt-1">{errors.lastName.message}</p>}
             </div>
 
             <div>
-                <label className="text-xs text-gray-600">CPF*</label>
+                <label className="text-xs text-gray-text">CPF*</label>
                 <input className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                ${errors.cpf ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433EB]"}`}
+                ${errors.cpf ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
                 type="text" {...register("cpf")} />
 
-                {errors.cpf && <p className="text-xs text-red-600 mt-1">{errors.cpf.message}</p>}
+                {errors.cpf && <p className="text-xs text-error mt-1">{errors.cpf.message}</p>}
             </div>
 
             <div>
-                <label className="text-xs text-gray-600">Data de Nascimento</label>
+                <label className="text-xs text-gray-text">Data de Nascimento</label>
                 <input className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                ${errors.dateBirth ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433EB]"}`}
+                ${errors.dateBirth ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
                 type="date" {...register("dateBirth", { valueAsDate: true })} />
 
-                {errors.dateBirth && <p className="text-xs text-red-600 mt-1">{errors.dateBirth.message}</p>}
+                {errors.dateBirth && <p className="text-xs text-error mt-1">{errors.dateBirth.message}</p>}
             </div>
 
             <div>
-                <label className="text-xs text-gray-600">Celular*</label>
+                <label className="text-xs text-gray-text">Celular*</label>
                 <input className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                ${errors.cellphone ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433EB]"}`}
+                ${errors.cellphone ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
                 type="tel" {...register("cellphone")} />
 
-                {errors.cellphone && <p className="text-xs text-red-600 mt-1">{errors.cellphone.message}</p>}
+                {errors.cellphone && <p className="text-xs text-error mt-1">{errors.cellphone.message}</p>}
             </div>
 
             <button disabled={isSubmitting}
-            className="bg-[#5433EB] text-white font-semibold uppercase rounded-md py-3 transition-all hover:bg-[#4028C7] disabled:opacity-50 w-full cursor-pointer mt-4">
+            className="bg-accent text-white font-semibold uppercase rounded-md py-3 transition-all hover:bg-accent-hover disabled:opacity-50 w-full cursor-pointer mt-4">
                 {isSubmitting ? "Enviando..." : "Registrar"}
             </button>
         </form>

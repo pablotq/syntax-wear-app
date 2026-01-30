@@ -16,7 +16,7 @@ export const MenuMobile = ({ navLinks }: MenuMobileProps) => {
 
     return (
         <>
-            <button className="cursor-pointer">
+            <button className="cursor-pointer mt-2">
                 <img src={IconMenu} alt="Ícone menu" onClick={() => setMenuIsOpen(!menuIsOpen)} />
             </button>
 

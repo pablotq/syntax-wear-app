@@ -1,6 +1,5 @@
 import Logo from '@/assets/images/logo.png';
 import IconUser from '@/assets/images/icon-user.png';
-import IconAbout from '@/assets/images/icon-about.png';
 import { Link } from '@tanstack/react-router';
 import { ShoppingCart } from '../ShoppingCart';
 import { MenuMobile } from '../MenuMobile';
@@ -28,7 +27,7 @@ export const Header = () => {
 
 
           <nav className='hidden md:block'>
-            <ul className='flex gap-3 lg:gap-10'>
+            <ul className='flex gap-6 lg:gap-15'>
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <Link to="/products/category/$category"
@@ -41,7 +40,7 @@ export const Header = () => {
           </nav>
 
           <nav>
-            <ul className='flex gap-3 lg:gap-10 items-center'>
+            <ul className='flex gap-4 lg:gap-10 items-center'>
               <li className='hidden md:block'>
                 <Link to="/our-stores">Nossas lojas</Link>
               </li>
@@ -54,8 +53,6 @@ export const Header = () => {
               <li className='hidden md:block'>
                 <Link to="/sign-in"><img src={IconUser} alt="Ícone de login" /></Link>
               </li>
-              <li className='hidden md:block'>
-                <Link to="/about"><img src={IconAbout} alt="Ícone sobre" /></Link></li>
               <li>
                 <ShoppingCart />
               </li>

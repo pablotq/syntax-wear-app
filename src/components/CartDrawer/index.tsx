@@ -1,34 +1,25 @@
-import IconCart from "@/assets/images/icon-cart.png"
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { formatCurrency } from "../../utils/format-currency";
 import { CartContext } from "../../contexts/CartContext";
 
+interface CartDrawerProps {
+    isOpen: boolean;
+    onClose: () => void;
+}
 
-
-export const ShoppingCart = () => {
-
-    const [cartIsOpen, setCartIsOpen] = useState<boolean>(false);
+export const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
     const { cart, removeFromCart, decrementInCart, incrementInCart } = useContext(CartContext);
 
     return (
         <>
-            <button className="relative cursor-pointer mt-1.5" onClick={() => setCartIsOpen(!cartIsOpen)}>
-                <img src={IconCart} alt="Ícone carrinho de compras" />
-                {cart.length > 0 && (
-                    <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-error text-xs text-white">
-                        {cart.length}
-                    </span>
-                )}
-            </button>
-
             {/* Overlay */}
-            <div className={`${cartIsOpen ? 'bg-black/70 visible' : 'bg-transparent invisible'} fixed top-0 bottom-0 left-0 right-0`} onClick={() => setCartIsOpen(!cartIsOpen)}>
+            <div className={`${isOpen ? 'bg-black/70 visible' : 'bg-transparent invisible'} text-black fixed top-0 bottom-0 left-0 right-0 transition-all duration-700 ease-in-out z-30`} onClick={onClose}>
 
                 {/* Drawer */}
-                <div className={`${cartIsOpen ? 'translate-x-0' : 'translate-x-full'} absolute top-0 right-0 bottom-0 bg-white pt-6 transition-all duration-500 ease-in-out w-75 md:w-106`} onClick={(e) => e.stopPropagation()}>
+                <div className={`${isOpen ? 'translate-x-0' : 'translate-x-full'} absolute top-0 right-0 bottom-0 bg-white pt-6 transition-all duration-500 ease-in-out w-75 md:w-106`} onClick={(e) => e.stopPropagation()}>
                     <header className="flex items-center justify-between px-5">
                         <p className="text-2xl font-bold">Carrinho ({cart.length})</p>
-                        <button className="text-xl cursor-pointer" onClick={() => setCartIsOpen(!cartIsOpen)}>X</button>
+                        <button className="text-xl cursor-pointer" onClick={onClose}>X</button>
                     </header>
 
                     <ul className="px-4 overflow-y-auto scollbar-hide h-[calc(100%-140px)] flex flex-col gap-3">

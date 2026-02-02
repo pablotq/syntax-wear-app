@@ -1,77 +1,75 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+**Syntax Wear — Frontend**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Português
+--------
 
-Currently, two official plugins are available:
+Descrição
+- Projeto frontend de uma loja online (páginas de produto, listagem, carrinho, autenticação básica e formulários). Usa dados mockados em `src/mocks` para produtos e categorias.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Principais tecnologias
+- **Vite:** empacotador e dev server rápido.
+- **React 19:** biblioteca de UI.
+- **TypeScript:** tipagem estática para segurança e produtividade.
+- **Tailwind CSS:** utilitários CSS para estilização.
+- **@tanstack/react-router:** roteamento do app.
+- **react-hook-form:** gerenciamento de formulários.
+- **Zod:** validação e schemas (usado junto com `react-hook-form`).
+- **@hookform/resolvers:** integração `react-hook-form` + `zod`.
+- **react-icons:** ícones prontos.
+- **ESLint + plugins:** linting e regras para React/TypeScript.
+- **@vitejs/plugin-react:** plugin React para Vite.
 
-## React Compiler
+Estrutura relevante
+- `src/components` — componentes reutilizáveis (Header, Footer, ProductCard, CartDrawer, etc.).
+- `src/pages` — rotas e páginas (produtos, categorias, auth).
+- `src/contexts` — `CartContext` e `CartProvider` para estado do carrinho.
+- `src/mocks` — dados de exemplo (`products.ts`, `categories.ts`).
+- `src/utils` — utilitários (formatação, validação de CPF, etc.).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Execução
+- Instalar dependências: `npm install`
+- Rodar em modo dev: `npm run dev`
+- Build para produção: `npm run build`
+- Visualizar build: `npm run preview`
+- Rodar lint: `npm run lint`
 
-## Expanding the ESLint configuration
+Observações
+- Arquivos de configuração: `tsconfig.json`, `vite.config.ts`, `eslint.config.js`, `vercel.json`.
+- O projeto é focado no frontend; não há backend — os dados vêm de mocks.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+English
+-------
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Description
+- Frontend project for an online store (product pages, listing, cart, basic auth and forms). Uses mocked data in `src/mocks` for products and categories.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Main technologies
+- **Vite:** fast bundler and dev server.
+- **React 19:** UI library.
+- **TypeScript:** static typing for safety and DX.
+- **Tailwind CSS:** utility-first CSS framework.
+- **@tanstack/react-router:** routing solution used by the app.
+- **react-hook-form:** form management.
+- **Zod:** schema validation (used with `react-hook-form`).
+- **@hookform/resolvers:** `react-hook-form` + `zod` resolver.
+- **react-icons:** icon library.
+- **ESLint + plugins:** linting setup for React/TypeScript.
+- **@vitejs/plugin-react:** Vite plugin for React.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Relevant structure
+- `src/components` — reusable UI components (Header, Footer, ProductCard, CartDrawer, etc.).
+- `src/pages` — routes and pages (products, categories, auth).
+- `src/contexts` — `CartContext` and `CartProvider` for cart state.
+- `src/mocks` — example data (`products.ts`, `categories.ts`).
+- `src/utils` — utilities (formatting, CPF validator, etc.).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Usage
+- Install dependencies: `npm install`
+- Start dev server: `npm run dev`
+- Build for production: `npm run build`
+- Preview production build: `npm run preview`
+- Run linter: `npm run lint`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-=======
-# ecommerce-syntaxwear
->>>>>>> 4e47408c61e365de0a46d7d2b8cb383b21fdfaa4
+Notes
+- Config files: `tsconfig.json`, `vite.config.ts`, `eslint.config.js`, `vercel.json`.
+- This repository is a frontend-only app; backend/API should be connected separately when needed.

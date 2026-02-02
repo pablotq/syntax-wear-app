@@ -49,9 +49,9 @@ function RouteComponent() {
         <Link className='hover:underline font-semibold' to="/"> {filteredProduct?.name}</Link>
       </nav>
 
-      <div className="flex flex-col lg:flex-row justify-center gap-10 ">
+      <div className="flex flex-col lg:flex-row justify-center gap-10">
         <img src={filteredProduct?.image} alt={filteredProduct?.name}
-          className='max-w-125 bg-white rounded-2xl self-center lg:self-start' />
+          className='max-w-125 bg-white rounded-2xl' />
 
         <div className='text-black'>
           <h1 className='text-4xl font-bold mb-1'>{filteredProduct?.name}</h1>
